@@ -24,47 +24,68 @@ module.exports = function(settings) {
     var globs = settings.globs;
 
     return {
-        watch: {
-            complexity: {
-                files: [globs.src],
+        'watch-complexity': {
+            all: {
+                files: [globs.src, globs.templates],
                 tasks: ['clean:complexity', 'plato:complexity'],
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            coverage: {
-                files: [globs.src, globs.test],
+            }
+        },
+
+        'watch-coverage': {
+            all: {
+                files: [globs.src, globs.templates, globs.test, globs.testTemplates],
                 tasks: ['clean:coverage', 'jasmine:coverage'],
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            dev: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+            }
+        },
+
+        'watch-dev': {
+            all: {
+                files: [
+                    files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
+                    globs.examles, globs.html, globs.css
+                ],
                 tasks: ['jshint', 'clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            docs: {
+            }
+        },
+
+        'watch-docs': {
+            all: {
                 files: [files.docsReadme, globs.src],
                 tasks: ['clean:docs', 'jsdoc'],
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            lint: {
+            }
+        },
+
+        'watch-lint': {
+            all: {
                 files: [globs.src, globs.test, globs.tools],
                 tasks: ['jshint']
-            },
-            serve: {
+            }
+        },
+
+        'watch-serve': {
+            all: {
                 files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
                 tasks: [],
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            test: {
+            }
+        },
+
+        'watch-test': {
+            all: {
                 files: [globs.src, globs.test],
                 tasks: ['clean:test', 'jasmine:test'],
                 options: {

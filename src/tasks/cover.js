@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             'clean:coverage',
             'jasmine:coverage',
             'shell:openCoverage',
-            'watch:coverage'
+            'watch-coverage:all'
         ]));
     });
 };

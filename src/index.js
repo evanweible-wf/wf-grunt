@@ -42,6 +42,12 @@ function initConfig(grunt, wfJsGruntConfig) {
 
 // Load custom and third-party plugin tasks.
 function loadTasks(grunt) {
+    // Create namespaces for watch tasks
+    _.forEach(settings.scenarios, function(scenario) {
+        grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.renameTask('watch', 'watch-' + scenario);
+    });
+
     grunt.loadTasks(settings.basePath + '/src/tasks');
     grunt.file.expand(settings.basePath + '/node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
 }

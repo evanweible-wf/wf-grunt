@@ -47,10 +47,22 @@ var globs = {
     examples: 'examples/**/*.js',
     specs: 'test/**/*Spec.js',
     src: 'src/**/*.js',
+    templates: 'src/**/*.html',
     test: 'test/**/*.js',
+    testTemplates: 'test/**/*.html',
     tools: 'tools/**/*.js',
     vendor: 'examples/vendor/**/*.js'
 };
+
+var scenarios = [
+    'complexity',
+    'coverage',
+    'dev',
+    'docs',
+    'lint',
+    'serve',
+    'test'
+];
 
 var defaults = {
     browserStackCredentials: null,
@@ -80,6 +92,7 @@ settings.init = function(options) {
     settings.files = files;
     settings.globs = globs;
     settings.wwwBaseUrl = 'http://0.0.0.0:' + settings.wwwPort + '/';
+    settings.scenarios = scenarios;
 
     // RequireJs configs need to be built from a template because
     // jasmine, istanbul and karma all need slightly different configurations.

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         grunt.task.run(subtasks(this.name, [
             'connect:run',
             'shell:openWeb',
-            'watch:serve'
+            'watch-serve:all'
         ]));
     });
 };

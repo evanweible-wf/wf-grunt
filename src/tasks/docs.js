@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             'clean:docs',
             'jsdoc',
             'shell:openDocs',
-            'watch:docs'
+            'watch-docs:all'
         ]));
     });
 };

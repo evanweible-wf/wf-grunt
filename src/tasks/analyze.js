@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             'clean:complexity',
             'plato:complexity',
             'shell:openComplexity',
-            'watch:complexity'
+            'watch-complexity:all'
         ]));
     });
 };

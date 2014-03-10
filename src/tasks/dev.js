@@ -26,7 +26,7 @@ module.exports = function(grunt) {
             'clean:test',
             'jasmine:test',
             'shell:openWeb',
-            'watch:dev'
+            'watch-dev:all'
         ]));
     });
 };

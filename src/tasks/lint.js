@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     grunt.registerTask('lint', 'Lint files and watch.', function() {
         grunt.task.run(subtasks(this.name, [
             'jshint',
-            'watch:lint'
+            'watch-lint:all'
         ]));
     });
 };
