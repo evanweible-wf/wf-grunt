@@ -22,6 +22,7 @@ module.exports = function(settings) {
 
     function getCommonMiddleware(connect, options) {
         return [
+            require('connect-modrewrite')(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']),
             require('../middleware/proxy')(settings.proxies),
             require('connect-livereload')({
                 port: settings.livereloadPort,
